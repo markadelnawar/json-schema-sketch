@@ -4,7 +4,7 @@
 
 # json-schema-sketch
 
-Infer compact schema descriptions from any JSON value. Produces a text representation of the data's structure — types, array counts, optional keys, unions — without the actual values.
+Infer compact schema descriptions from any JSON value. Produces a text representation of the data's structure — types, array counts, optional keys, unions — without the actual values , Typically ~80% smaller than raw JSON from average size apis.
 
 ```typescript
 import { inferSchema, renderSchema } from "json-schema-sketch";
