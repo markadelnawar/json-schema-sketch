@@ -1,0 +1,40 @@
+{
+  "name": "json-schema-sketch",
+  "version": "0.1.0",
+  "description": "Infer compact, token-efficient schema representations from JSON values. Designed for AI/LLM contexts where minimizing tokens matters.",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "inference",
+    "compact",
+    "token-efficient",
+    "ai",
+    "llm",
+    "json-path"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
