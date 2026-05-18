@@ -29,6 +29,11 @@
     "llm",
     "json-path"
   ],
+  "homepage": "https://json-schema-sketch-docs.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markadelnawar/json-schema-sketch"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
