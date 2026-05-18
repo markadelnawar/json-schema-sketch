@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/banner_1.png" alt="json-schema-sketch" width="100%" />
+  <img src="https://raw.githubusercontent.com/markadelnawar/json-schema-sketch/main/images/banner_1.png" alt="json-schema-sketch" width="100%" />
 </p>
 
 # json-schema-sketch
@@ -286,5 +286,5 @@ Neither was told what the format is or what tool produced it.
 MIT
 
 <p align="center">
-  <img src="images/banner_footer.png" alt="json-schema-sketch" width="100%" />
+  <img src="https://raw.githubusercontent.com/markadelnawar/json-schema-sketch/main/images/banner_footer.png" alt="json-schema-sketch" width="100%" />
 </p>
