@@ -1,6 +1,6 @@
 {
   "name": "json-schema-sketch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Infer compact, token-efficient schema representations from JSON values. Designed for AI/LLM contexts where minimizing tokens matters.",
   "type": "module",
   "main": "dist/src/index.js",
