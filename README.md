@@ -38,6 +38,19 @@ Zero dependencies. ESM only. Node 18+.
 
 ## Use cases
 
+### Wrapping MCP servers with heavy JSON tools
+
+If you're building or maintaining an MCP server whose tools return large JSON payloads (lists, search results, deeply nested responses), you can sketch the response shape and have the agent query back for specific fields instead of dumping raw JSON into its context.
+
+We did exactly this with the GitHub MCP — see [`github-mcp-sketch`](https://github.com/markadelnawar/github-mcp-sketch) for a reference implementation. The proxy forwards each upstream call, sketches the response into a compact schema, returns `cache_id + schema` to the agent, and exposes a `query_response` tool for drilling back into specific fields on demand.
+
+Measured across 13 realistic agentic tasks on `facebook/react` and `kubernetes/kubernetes` (Anthropic SDK + prompt caching enabled, mirroring how Claude Code uses the API):
+
+- Final context window: **−58.7%** (844K → 348K tokens, summed medians)
+- API cost (Claude Opus 4.7): **−51.2%** ($5.59 → $2.73)
+
+The wins live on list endpoints, comment-heavy threads, and multi-step workflows. Single-object fetches and raw file source see no benefit. Reproducible bench, methodology, raw CSVs: [`json-schema-sketch-bench`](https://github.com/markadelnawar/json-schema-sketch-bench).
+
 ### LLM tool-use context
 
 When an LLM calls a tool that returns JSON, you can send the schema instead of the full payload to reduce token usage:
